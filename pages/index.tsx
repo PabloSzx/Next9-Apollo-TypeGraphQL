@@ -1,15 +1,13 @@
 import gql from "graphql-tag";
 import { NextPage } from "next";
 import Head from "next/head";
-
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "react-apollo";
 
 const Home: NextPage = () => {
   const { loading, data } = useQuery(gql`
     query {
       books {
         title
-        author
       }
     }
   `);

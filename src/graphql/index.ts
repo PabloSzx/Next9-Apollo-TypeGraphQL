@@ -2,9 +2,9 @@ import { Field, ObjectType } from "type-graphql";
 
 @ObjectType()
 export class Book {
-  @Field(type => String)
+  @Field()
   title!: string;
 
-  @Field(type => String)
+  @Field()
   author!: string;
 }

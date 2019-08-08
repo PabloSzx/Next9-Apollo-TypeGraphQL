@@ -2,8 +2,6 @@ import ApolloClient from "apollo-boost";
 import App, { Container } from "next/app";
 import { ApolloProvider } from "react-apollo";
 
-import { ApolloProvider as HooksApolloProvider } from "@apollo/react-hooks";
-
 import withApollo from "../src/utils/withApollo";
 
 class MyApp extends App<{ apollo: ApolloClient<any> }> {
@@ -12,11 +10,9 @@ class MyApp extends App<{ apollo: ApolloClient<any> }> {
 
     return (
       <Container>
-        <HooksApolloProvider client={apollo}>
-          <ApolloProvider client={apollo}>
-            <Component {...pageProps} />
-          </ApolloProvider>
-        </HooksApolloProvider>
+        <ApolloProvider client={apollo}>
+          <Component {...pageProps} />
+        </ApolloProvider>
       </Container>
     );
   }

@@ -28,7 +28,6 @@ const apolloServer = new ApolloServer({
   schema: buildSchemaSync({
     resolvers: [BookResolver],
     validate: false,
-    globalMiddlewares: [],
   }),
   playground:
     process.env.NODE_ENV !== "production"
